@@ -62,7 +62,7 @@ class OrderedGallery(models.Model):
         return random.sample(photo_set, limit)
 
     def in_order(self, limit=None, public=True):
-        photos = self.photos.order_by('photoordering__order')
+        photos = self.photos.order_by('photoordering__pk')
         if public:
             photos = photos.filter(is_public=True)
         if limit:
