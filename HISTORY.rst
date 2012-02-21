@@ -1,3 +1,18 @@
+0.2.3 (2012/01/11)
+------------------
+
+* Added width and height attributes to Phlog Galleries
+
+0.2.2 (2011/12/01)
+------------------
+
+* Fixed a bug when a phlog photo plugin is added without a photo
+
+0.2.1 (2011/10/14)
+------------------
+
+* Fixed a bug with the rendered order of Phlog Galleries
+
 0.2 (2011/08/04)
 ----------------
 

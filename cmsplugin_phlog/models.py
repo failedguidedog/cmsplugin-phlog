@@ -130,7 +130,10 @@ class PhlogPhotoPlugin(CMSPlugin):
         db_table = 'cmsplugin_phlog_phlog_photo'
     
     def __unicode__(self):
-        return self.photos.all()[0].title
+        try:
+            return self.photos.all()[0].title
+        except:
+            return 'PhlogPhotoPlugin #%d' % (self.pk,)
     
     @property
     def render_template(self):
@@ -142,6 +145,8 @@ class GalleryPlugin(CMSPlugin):
     template = models.CharField(max_length=255, blank=True,
                                 help_text=u'Enter a template to use instead of '
                                 u'the standard templates')
+    width = models.PositiveIntegerField(null=True, blank=True)
+    height = models.PositiveIntegerField(null=True, blank=True)
     
     class Meta:
         db_table = 'cmsplugin_phlog_phlog_gallery'
